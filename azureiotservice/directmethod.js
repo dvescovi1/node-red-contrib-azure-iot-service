@@ -2,7 +2,7 @@ var Client = require('azure-iothub').Client;
 
 module.exports = function (RED) {
 
-	function directmethod(config) {
+	function DirectMethod(config) {
 
 		RED.nodes.createNode(this, config);
 		var node = this;
@@ -77,7 +77,7 @@ module.exports = function (RED) {
 					
 					if (result){
 						node.status({ fill: "green", shape: "dot", text: "Sent" });
-						return node.send({ payload: { result: result.constructor.name, source: msg } });
+						return node.send({ payload: { result: result, source: msg } });
 					}
 
 					node.status({ fill: "red", shape: "dot", text: "Error" });
@@ -104,7 +104,7 @@ module.exports = function (RED) {
 		});
 	};
 
-	RED.nodes.registerType("directmethod", directmethod,
+	RED.nodes.registerType("directmethod", DirectMethod,
 		{
 			credentials: {
 				connectionString: { type: "text" }
