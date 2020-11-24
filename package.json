@@ -1,0 +1,25 @@
+{
+  "name": "node-red-contrib-azure-iot-service",
+  "description": "Node to send Azure IoT Hub service messages",
+  "version": "0.1.0",
+  "license" : "MIT",
+  "author": {
+    "name": "David Vescovi"
+  },
+  "keywords": [
+    "node-red",
+    "Azure",
+    "Azure IoT"
+],
+  "node-red": {
+    "nodes": {
+      "DirectMethod": "azureiotservice/directmethod.js"
+    }
+  },
+  "dependencies": {
+    "azure-iothub": "^1.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/mitechlogistics/node-red-contrib-azure-iot-hub-send-c2d.git"
+  }}
